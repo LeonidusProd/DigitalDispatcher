@@ -6,7 +6,8 @@ from djoser.conf import settings
 class CustomTokenSerializer(TokenSerializer):
     role = serializers.SerializerMethodField(method_name='get_role')
 
-    def get_role(self, obj):
+    @staticmethod
+    def get_role(obj):
         user = obj.user
         if user.is_superuser:
             return 'admin'

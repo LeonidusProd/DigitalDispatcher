@@ -1,80 +1,104 @@
 from rest_framework import serializers
-from rest_framework.renderers import JSONRenderer
-
-from .models import *
 from django.contrib.auth.models import User
 
-
-'''
-Lst - List
-Det - Detail
-Mng - Manage
-Crt - Create
-Del - Delete
-'''
+from .models import *
 
 
 # Используемые
 class BuildingLstSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех адресов (жилые и не жилые здания)
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
 
-    def get_name(self, obj): return str(obj.short_str_with_city())
+    @staticmethod
+    def get_name(obj): return str(obj.short_str_with_city())
 
     class Meta:
         model = Building
         fields = ['pk', 'name']
 
 
-class BuildingLstMngCrtDelSerializer(serializers.ModelSerializer):
+class BuildingCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для создания и удаления адреса
+    """
+
     class Meta:
         model = Building
         fields = '__all__'
 
 
 class BotTokensSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения и изменения настроек ботов
+    """
 
     class Meta:
         model = BotsSettings
         fields = '__all__'
 
 
-class CityLstMngCrtDelSerializer(serializers.ModelSerializer):
+class CityLstCrtSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех городов и добавления нового города
+    """
+
     class Meta:
         model = City
         fields = ['pk', 'name']
 
 
-class StreetLstMngCrtDelSerializer(serializers.ModelSerializer):
+class StreetLstCrtSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка улиц города и добавления новой улицы
+    """
+
     class Meta:
         model = Street
         fields = ['pk', 'city', 'name']
 
 
-class HousingComplexLstMngCrtDelSerializer(serializers.ModelSerializer):
+class HousingComplexLstCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех ЖК, создания и удаления ЖК
+    """
 
     class Meta:
         model = HousingComplex
         fields = ['pk', 'name', 'office']
 
 
-class DepartmentUltimateSerializer(serializers.ModelSerializer):
+class DepartmentLstCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех отделов, создания и удаления отдела
+    """
+
     class Meta:
         model = Department
         fields = ['pk', 'name']
 
 
-class EmployeeSpecSerializer(serializers.ModelSerializer):
+class EmployeeLstSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех сотрудников
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
     empl_name = serializers.SerializerMethodField(method_name='get_empl_name')
     empl_surname = serializers.SerializerMethodField(method_name='get_empl_surname')
 
-    def get_name(self, obj):
+    @staticmethod
+    def get_name(obj):
         return f'{obj.surname} {obj.name} {obj.patronymic}'.strip()
 
-    def get_empl_name(self, obj):
+    @staticmethod
+    def get_empl_name(obj):
         return obj.name
 
-    def get_empl_surname(self, obj):
+    @staticmethod
+    def get_empl_surname(obj):
         return obj.surname
 
     class Meta:
@@ -82,17 +106,25 @@ class EmployeeSpecSerializer(serializers.ModelSerializer):
         fields = ['pk', 'name', 'empl_name', 'empl_surname']
 
 
-class EmployeeFullLstMngCrtDelSerializer(serializers.ModelSerializer):
+class EmployeeCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для добавления и удаления сотрудника
+    """
 
     class Meta:
         model = Employee
         fields = '__all__'
 
 
-class HouseLstMngCrtDelSerializer(serializers.ModelSerializer):
+class HouseLstCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех жилых домов, создания и удаления жилого дома
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
 
-    def get_name(self, obj):
+    @staticmethod
+    def get_name(obj):
         return str(obj.__str__())
 
     class Meta:
@@ -100,10 +132,15 @@ class HouseLstMngCrtDelSerializer(serializers.ModelSerializer):
         fields = ['pk', 'name', 'complex', 'address']
 
 
-class HouseShortLstSerializer(serializers.ModelSerializer):
+class ComplexHousesLstSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка домов жилого комплекса
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
 
-    def get_name(self, obj):
+    @staticmethod
+    def get_name(obj):
         return str(obj.short_str())
 
     class Meta:
@@ -111,32 +148,47 @@ class HouseShortLstSerializer(serializers.ModelSerializer):
         fields = ['pk', 'name', 'complex', 'address']
 
 
-class OfficeLstMngCrtDelSerializer(serializers.ModelSerializer):
+class OfficeLstCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех УК, создания и удаления УК
+    """
 
     class Meta:
         model = Office
         fields = ['pk', 'name', 'address', 'work_schedule']
 
 
-class PositionLstMngCrtDelSerializer(serializers.ModelSerializer):
+class PositionLstCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех должностей, создания и удаления должности
+    """
+
     class Meta:
         model = Position
         fields = ['pk', 'name', 'department']
 
 
 class RequestShortInfoSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка заявок (новых или активных)
+    с короткой информацией
+    """
+
     date = serializers.SerializerMethodField(method_name='get_date')
     info = serializers.SerializerMethodField(method_name='get_info')
     address = serializers.SerializerMethodField(method_name='get_address')
 
-    def get_date(self, obj):
+    @staticmethod
+    def get_date(obj):
         local_time = timezone.localtime(obj.created_at, timezone.get_current_timezone())
         return f"{local_time.date().strftime('%d.%m.%Y')} {local_time.time().strftime('%H:%M')}"
 
-    def get_info(self, obj):
+    @staticmethod
+    def get_info(obj):
         return obj.text
 
-    def get_address(self, obj):
+    @staticmethod
+    def get_address(obj):
         return obj.address.address.short_str()
 
     class Meta:
@@ -145,6 +197,10 @@ class RequestShortInfoSerializer(serializers.ModelSerializer):
 
 
 class RequestDetSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения польной информации о заявке и получения списка заявок от пользователя TG
+    """
+
     info = serializers.SerializerMethodField(method_name='get_info')
     date = serializers.SerializerMethodField(method_name='get_date')
     complex = serializers.SerializerMethodField(method_name='get_complex')
@@ -153,29 +209,36 @@ class RequestDetSerializer(serializers.ModelSerializer):
     resident = serializers.SerializerMethodField(method_name='get_resident')
     office_id = serializers.SerializerMethodField(method_name='get_office_id')
 
-    def get_info(self, obj):
+    @staticmethod
+    def get_info(obj):
         return obj.text
 
-    def get_date(self, obj):
+    @staticmethod
+    def get_date(obj):
         local_time = timezone.localtime(obj.created_at, timezone.get_current_timezone())
         return f"{local_time.date().strftime('%d.%m.%Y')} {local_time.time().strftime('%H:%M')}"
 
-    def get_complex(self, obj):
+    @staticmethod
+    def get_complex(obj):
         return obj.address.complex.__str__()
 
-    def get_status_name(self, obj):
+    @staticmethod
+    def get_status_name(obj):
         return obj.status.name
 
-    def get_address(self, obj):
+    @staticmethod
+    def get_address(obj):
         if obj.apartment:
             return f"{obj.address.address.short_str()}, кв. {obj.apartment}"
         else:
             return f"{obj.address.address.short_str()}"
 
-    def get_resident(self, obj):
+    @staticmethod
+    def get_resident(obj):
         return obj.resident.__str__()
 
-    def get_office_id(self, obj):
+    @staticmethod
+    def get_office_id(obj):
         return obj.address.complex.office.pk
 
     class Meta:
@@ -184,14 +247,20 @@ class RequestDetSerializer(serializers.ModelSerializer):
 
 
 class RequestTaskInfoSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка задач у заявки и списка задач для пользователя TG
+    """
+
     employee = serializers.SerializerMethodField(method_name='get_employee')
     task = serializers.SerializerMethodField(method_name='get_task')
     status = serializers.SlugRelatedField(slug_field='name', read_only=True)
 
-    def get_employee(self, obj):
+    @staticmethod
+    def get_employee(obj):
         return obj.employee.get_respectful_treatment()
 
-    def get_task(self, obj):
+    @staticmethod
+    def get_task(obj):
         return obj.service.name
 
     class Meta:
@@ -199,7 +268,10 @@ class RequestTaskInfoSerializer(serializers.ModelSerializer):
         fields = ['pk', 'employee', 'task', 'status']
 
 
-class RequestLstMngCrtDelSerializer(serializers.ModelSerializer):
+class RequestCrtSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для создания новой заявки
+    """
 
     class Meta:
         model = Request
@@ -207,12 +279,16 @@ class RequestLstMngCrtDelSerializer(serializers.ModelSerializer):
 
 
 class WorkScheduleLstSerializer(serializers.ModelSerializer):
-    work_days = serializers.SerializerMethodField()
+    """
+    Сериализатор для получения списка графиков работы
+    """
 
-    def get_work_days(self, obj):
+    work_days = serializers.SerializerMethodField(method_name='get_work_days')
+
+    @staticmethod
+    def get_work_days(obj):
         work_days = obj.work_days.all().order_by('day_of_week')
         serializer = WorkDayShortLstSerializer(work_days, many=True)
-        # serializer = WorkDayFullLstSerializer(work_days, many=True)
         return serializer.data
 
     class Meta:
@@ -221,9 +297,14 @@ class WorkScheduleLstSerializer(serializers.ModelSerializer):
 
 
 class WorkScheduleDetMngSerializer(serializers.ModelSerializer):
-    work_days = serializers.SerializerMethodField()
+    """
+    Сериализатор для получения полной информации о графике работы
+    """
 
-    def get_work_days(self, obj):
+    work_days = serializers.SerializerMethodField(method_name='get_work_days')
+
+    @staticmethod
+    def get_work_days(obj):
         work_days = obj.work_days.all().order_by('day_of_week')
         serializer = WorkDayFullLstSerializer(work_days, many=True)
         return serializer.data
@@ -234,11 +315,21 @@ class WorkScheduleDetMngSerializer(serializers.ModelSerializer):
 
 
 class WorkDayFullLstSerializer(serializers.ModelSerializer):
-    day_of_week_name = serializers.ChoiceField(choices=WorkDay.DAY_CHOICES, source='get_day_of_week_display', read_only=True)
+    """
+    Сериализатор для получения списка дней графика работы с полной информацией
+    и изменения информации о рабочем дне
+    """
+
+    day_of_week_name = serializers.ChoiceField(
+        choices=WorkDay.DAY_CHOICES,
+        source='get_day_of_week_display',
+        read_only=True
+    )
     day_of_week = serializers.ChoiceField(choices=WorkDay.DAY_CHOICES, read_only=True)
     resume = serializers.SerializerMethodField(method_name='get_resume')
 
-    def get_resume(self, obj):
+    @staticmethod
+    def get_resume(obj):
         return str(obj.short_str())
 
     class Meta:
@@ -254,13 +345,19 @@ class WorkDayFullLstSerializer(serializers.ModelSerializer):
 
 
 class WorkScheduleCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для создания и удаления графика работы
+    """
 
     class Meta:
         model = WorkSchedule
         fields = '__all__'
 
 
-class ServiceLstMngCrtDelSerializer(serializers.ModelSerializer):
+class ServiceLstCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех типовых задач, создания и удаления типовой задачи
+    """
 
     class Meta:
         model = Service
@@ -268,9 +365,14 @@ class ServiceLstMngCrtDelSerializer(serializers.ModelSerializer):
 
 
 class ServiseEmployeesSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка сотрудников, подходящих к задаче
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
 
-    def get_name(self, obj):
+    @staticmethod
+    def get_name(obj):
         return obj.get_full_SNP()
 
     class Meta:
@@ -279,21 +381,29 @@ class ServiseEmployeesSerializer(serializers.ModelSerializer):
 
 
 class TaskFullInfoSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения и изменения задачи для заявки
+    """
+
     employee = serializers.SerializerMethodField(method_name='get_employee')
     task = serializers.SerializerMethodField(method_name='get_task')
     status_name = serializers.SerializerMethodField(method_name='get_status_name')
     task_description = serializers.SerializerMethodField(method_name='get_task_description')
 
-    def get_employee(self, obj):
+    @staticmethod
+    def get_employee(obj):
         return obj.employee.get_respectful_treatment()
 
-    def get_task(self, obj):
+    @staticmethod
+    def get_task(obj):
         return obj.service.name
 
-    def get_status_name(self, obj):
+    @staticmethod
+    def get_status_name(obj):
         return obj.status.name
 
-    def get_task_description(self, obj):
+    @staticmethod
+    def get_task_description(obj):
         return obj.service.description
 
     class Meta:
@@ -302,6 +412,9 @@ class TaskFullInfoSerializer(serializers.ModelSerializer):
 
 
 class RequestTaskDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для создания и удаления задачи для заявки
+    """
 
     class Meta:
         model = RequestTask
@@ -309,9 +422,14 @@ class RequestTaskDelSerializer(serializers.ModelSerializer):
 
 
 class ResidentLstSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех жителей и информации о жителе по TG user id
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
 
-    def get_name(self,obj):
+    @staticmethod
+    def get_name(obj):
         return obj.__str__()
 
     class Meta:
@@ -319,7 +437,10 @@ class ResidentLstSerializer(serializers.ModelSerializer):
         fields = ['pk', 'name']
 
 
-class ResidentFullLstMngCrtDelSerializer(serializers.ModelSerializer):
+class ResidentCrtSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для добавления нового жителя
+    """
 
     class Meta:
         model = Resident
@@ -327,9 +448,14 @@ class ResidentFullLstMngCrtDelSerializer(serializers.ModelSerializer):
 
 
 class WorkDayShortLstSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка дней графика работы с сокращённой информацией
+    """
+
     resume = serializers.SerializerMethodField(method_name='get_resume')
 
-    def get_resume(self, obj):
+    @staticmethod
+    def get_resume(obj):
         return str(obj.short_str())
 
     class Meta:
@@ -338,9 +464,14 @@ class WorkDayShortLstSerializer(serializers.ModelSerializer):
 
 
 class UserLstMngCrtDelSerializer(serializers.ModelSerializer):
+    """
+    Сериализатор для получения списка всех пользователей, создания и удаления пользователя
+    """
+
     name = serializers.SerializerMethodField(method_name='get_name')
 
-    def get_name(self, obj):
+    @staticmethod
+    def get_name(obj):
         if obj.is_superuser:
             return f'{obj.username}: Администратор'
         elif obj.is_staff and obj.is_superuser:
@@ -351,234 +482,3 @@ class UserLstMngCrtDelSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['pk', 'name', 'username', 'password', 'is_superuser', 'is_staff', 'first_name', 'last_name', ]
-
-
-# Специализированные serializer
-class TemporaryTokenSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TemporaryToken
-        fields = ['token', 'created_to', 'created_at']
-
-
-# Не используются в настоящий момент
-# class CityDetSerializer(serializers.ModelSerializer):
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     short_full_name = serializers.SerializerMethodField(method_name='get_short_full_name')
-#
-#     def get_full_name(self, obj):
-#         return str(obj)
-#
-#     def get_short_full_name(self, obj):
-#         return obj.short_str()
-#
-#     class Meta:
-#         model = City
-#         fields = ['id', 'name', 'full_name', 'short_full_name']
-#
-# #####################################################################
-#
-# class StreetDetSerializer(serializers.ModelSerializer):
-#     city_name = serializers.SerializerMethodField(method_name='get_city_name')
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     short_full_name = serializers.SerializerMethodField(method_name='get_short_full_name')
-#
-#     def get_city_name(self, obj): return str(obj.city.name)
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     def get_short_full_name(self, obj): return obj.short_str()
-#
-#     class Meta:
-#         model = Street
-#         fields = ['id', 'name', 'city', 'city_name', 'full_name', 'short_full_name']
-#
-# #####################################################################
-#
-# class BuildingDetSerializer(serializers.ModelSerializer):
-#     city_name = serializers.SerializerMethodField(method_name='get_city_name')
-#     street_name = serializers.SerializerMethodField(method_name='get_street_name')
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     short_full_name = serializers.SerializerMethodField(method_name='get_short_full_name')
-#
-#     def get_city_name(self, obj): return str(obj.street.city.name)
-#
-#     def get_street_name(self, obj): return str(obj.street.name)
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     def get_short_full_name(self, obj): return obj.short_str()
-#
-#     class Meta:
-#         model = Building
-#         fields = ['id', 'street', 'city_name', 'street_name', 'number', 'corpus', 'full_name', 'short_full_name']
-#
-# #####################################################################
-#
-# #####################################################################
-#
-# class OfficeDetSerializer(serializers.ModelSerializer):
-#     address_str = serializers.SerializerMethodField(method_name='get_address')
-#     work_schedule_detail = serializers.SerializerMethodField(method_name='get_work_schedule')
-#
-#     def get_address(self, obj): return str(obj.address)
-#
-#     def get_work_schedule(self, obj):
-#         work_days = WorkDay.objects.filter(schedule_id=obj.work_schedule).order_by('day_of_week')
-#         serializer = WorkDayShortLstSerializer(work_days, many=True)
-#         return serializer.data
-#
-#     class Meta:
-#         model = Office
-#         fields = ['id', 'name', 'address', 'address_str', 'work_schedule', 'work_schedule_detail']
-#
-# #####################################################################
-#
-# class HousingComplexDetSerializer(serializers.ModelSerializer):
-#     office_name = serializers.SerializerMethodField(method_name='get_office_name')
-#     office_address = serializers.SerializerMethodField(method_name='get_office_address')
-#
-#     def get_office_name(self, obj): return str(obj.office)
-#
-#     def get_office_address(self, obj): return str(obj.office.address)
-#
-#     class Meta:
-#         model = HousingComplex
-#         fields = ['id', 'name', 'office', 'office_name', 'office_address']
-#
-# #####################################################################
-#
-# class HouseDetSerializer(serializers.ModelSerializer):
-#     complex_name = serializers.SerializerMethodField(method_name='get_complex_name')
-#     address_str = serializers.SerializerMethodField(method_name='get_address_str')
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#
-#     def get_complex_name(self, obj): return str(obj.complex)
-#
-#     def get_address_str(self, obj): return str(obj.address)
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     class Meta:
-#         model = House
-#         fields = ['id', 'complex', 'complex_name', 'address', 'address_str', 'full_name']
-#
-# #####################################################################
-#
-# class ResidentFullLstMngCrtDelSerializer(serializers.ModelSerializer):
-#
-#     class Meta:
-#         model = Resident
-#         fields = '__all__'
-#
-#
-# class ResidentFullDetSerializer(serializers.ModelSerializer):
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     respectful_treatment = serializers.SerializerMethodField(method_name='get_respectful_treatment')
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     def get_respectful_treatment(self, obj): return obj.get_respectful_treatment()
-#
-#     class Meta:
-#         model = Resident
-#         fields = ['id', 'name', 'surname', 'patronymic', 'phone', 'tg_id', 'full_name', 'respectful_treatment']
-#
-#
-# class ResidentShortLstSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Resident
-#         fields = ['id', 'name', 'surname', 'patronymic']
-#
-#
-# class ResidentShortDetSerializer(serializers.ModelSerializer):
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     respectful_treatment = serializers.SerializerMethodField(method_name='get_respectful_treatment')
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     def get_respectful_treatment(self, obj): return obj.get_respectful_treatment()
-#
-#     class Meta:
-#         model = Resident
-#         fields = ['id', 'name', 'surname', 'patronymic', 'full_name', 'respectful_treatment']
-#
-# #####################################################################
-#
-# class ExecutionStatusUltimateSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = ExecutionStatus
-#         fields = '__all__'
-#
-# #####################################################################
-#
-# #####################################################################
-#
-# class PositionDetSerializer(serializers.ModelSerializer):
-#     department_name = serializers.SerializerMethodField(method_name='get_department_name')
-#
-#     def get_department_name(self, obj): return str(obj.department)
-#
-#     class Meta:
-#         model = Position
-#         fields = ['id', 'department', 'department_name', 'name']
-#
-# #####################################################################
-#
-# class EmployeeFullDetSerializer(serializers.ModelSerializer):
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     respectful_treatment = serializers.SerializerMethodField(method_name='get_respectful_treatment')
-#     office_name = serializers.SlugRelatedField(slug_field='name', read_only=True)
-#     position_name = serializers.SlugRelatedField(slug_field='name', read_only=True)
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     def get_respectful_treatment(self, obj): return obj.get_respectful_treatment()
-#
-#     class Meta:
-#         model = Employee
-#         fields = ['id', 'name', 'surname', 'patronymic', 'phone', 'email', 'office', 'office_name',
-#                   'position', 'position_name', 'tg_id', 'full_name', 'respectful_treatment']
-#
-#
-# class EmployeeShortLstSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Employee
-#         fields = ['pk', 'name', 'surname', 'patronymic']
-#
-#
-# class EmployeeShortDetSerializer(serializers.ModelSerializer):
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#     respectful_treatment = serializers.SerializerMethodField(method_name='get_respectful_treatment')
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     def get_respectful_treatment(self, obj): return obj.get_respectful_treatment()
-#
-#     class Meta:
-#         model = Employee
-#         fields = ['id', 'name', 'surname', 'patronymic', 'email', 'office', 'position', 'full_name',
-#                   'respectful_treatment']
-#
-# #####################################################################
-#
-# class ServiceDetSerializer(serializers.ModelSerializer):
-#     position_name = serializers.SerializerMethodField(method_name='get_position_name')
-#
-#     def get_position_name(self, obj): return str(obj.position)
-#
-#     class Meta:
-#         model = Service
-#         fields = ['id', 'name', 'position', 'position_name', 'description']
-#
-# #####################################################################
-
-
-# class RequestDetSerializer(serializers.ModelSerializer):
-#     full_name = serializers.SerializerMethodField(method_name='get_full_name')
-#
-#     def get_full_name(self, obj): return str(obj)
-#
-#     class Meta:
-#         model = Request
-#         fields = ['id', 'created_at', 'text', 'status', 'resident', 'address', 'apartment',
-#                   'photo', 'employee', 'service', 'full_name']

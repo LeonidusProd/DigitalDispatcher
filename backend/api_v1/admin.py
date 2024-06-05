@@ -285,12 +285,6 @@ class ServiceAdmin(admin.ModelAdmin):
 @admin.register(RequestTask)
 class RequestTaskAdmin(admin.ModelAdmin):
     list_per_page = 10
-    # search_fields = [
-    #     'name',
-    #     'description',
-    #     'position__name',
-    #     'position__department__name'
-    # ]
     save_on_top = True
 
     class Meta:

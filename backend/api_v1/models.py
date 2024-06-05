@@ -9,6 +9,10 @@ from django.dispatch import receiver
 
 
 class City(models.Model):
+    """
+    Модель города
+    """
+
     name = models.CharField(max_length=40, null=False, unique=True, verbose_name='Название')
 
     def __str__(self):
@@ -23,6 +27,10 @@ class City(models.Model):
 
 
 class Street(models.Model):
+    """
+    Модель улицы
+    """
+
     city = models.ForeignKey(City, on_delete=models.CASCADE, null=False, verbose_name='Город')
     name = models.CharField(max_length=100, null=False, verbose_name='Улица')
 
@@ -41,6 +49,10 @@ class Street(models.Model):
 
 
 class Building(models.Model):
+    """
+    Модель строения (жилого или не жилого)
+    """
+
     street = models.ForeignKey(Street, on_delete=models.CASCADE, null=False, verbose_name='Улица')
     number = models.IntegerField(null=False, verbose_name='Номер здания')
     corpus = models.CharField(max_length=5, null=True, blank=True, verbose_name='Корпус')
@@ -76,6 +88,10 @@ def check_unique_building(sender, instance, **kwargs):
 
 
 class WorkSchedule(models.Model):
+    """
+    Модель графика работы
+    """
+
     name = models.CharField(max_length=100, null=False, verbose_name='Название графика работы')
 
     def __str__(self):
@@ -87,6 +103,10 @@ class WorkSchedule(models.Model):
 
 
 class WorkDay(models.Model):
+    """
+    Модель дня в графике работы
+    """
+
     DAY_CHOICES = (
         (1, 'Понедельник'),
         (2, 'Вторник'),
@@ -128,10 +148,13 @@ def create_work_days(sender, instance, created, **kwargs):
     if created:
         for day_of_week in range(1, 8):
             WorkDay.objects.create(schedule=instance, day_of_week=day_of_week, is_not_working=True)
-        # WorkDay.objects.create(user=instance, is_performer=True)
 
 
 class Office(models.Model):
+    """
+    Модель управляющей компании (офиса УК)
+    """
+
     name = models.CharField(max_length=100, null=False, verbose_name='Название УК')
     address = models.ForeignKey(Building, on_delete=models.CASCADE, null=False, verbose_name='Адрес офиса УК')
     work_schedule = models.ForeignKey(WorkSchedule, on_delete=models.CASCADE, null=False, verbose_name='График работы')
@@ -145,6 +168,10 @@ class Office(models.Model):
 
 
 class HousingComplex(models.Model):
+    """
+    Модель жилого комплекса
+    """
+
     name = models.CharField(max_length=50, null=False, verbose_name='Название ЖК')
     office = models.ForeignKey(Office, on_delete=models.CASCADE, null=False, verbose_name='Офис УК')
 
@@ -157,6 +184,10 @@ class HousingComplex(models.Model):
 
 
 class House(models.Model):
+    """
+    Модель жилого дома
+    """
+
     complex = models.ForeignKey(HousingComplex, on_delete=models.CASCADE, null=False, verbose_name='Жилой комплекс')
     address = models.ForeignKey(Building, on_delete=models.CASCADE, null=False, verbose_name='Адрес')
 
@@ -172,6 +203,10 @@ class House(models.Model):
 
 
 class Resident(models.Model):
+    """
+    Модель жителя
+    """
+
     name = models.CharField(max_length=50, null=False, verbose_name='Имя')
     surname = models.CharField(max_length=50, null=False, verbose_name='Фамилия')
     patronymic = models.CharField(max_length=50, null=True, blank=True, verbose_name='Отчество')
@@ -196,6 +231,10 @@ class Resident(models.Model):
 
 
 class ExecutionStatus(models.Model):
+    """
+    Модель статуса
+    """
+
     name = models.CharField(max_length=50, null=False, verbose_name='Статус')
 
     def __str__(self):
@@ -207,6 +246,10 @@ class ExecutionStatus(models.Model):
 
 
 class Department(models.Model):
+    """
+    Модель отдела компании
+    """
+
     name = models.CharField(max_length=50, null=False, verbose_name='Отдел')
 
     def __str__(self):
@@ -218,6 +261,10 @@ class Department(models.Model):
 
 
 class Position(models.Model):
+    """
+    Модель должности
+    """
+
     name = models.CharField(max_length=50, null=False, verbose_name='Должность')
     department = models.ForeignKey(Department, on_delete=models.CASCADE, null=False, verbose_name='Отдел')
 
@@ -230,6 +277,10 @@ class Position(models.Model):
 
 
 class Employee(models.Model):
+    """
+    Модель сотрудника
+    """
+
     name = models.CharField(max_length=50, null=False, verbose_name='Имя')
     surname = models.CharField(max_length=50, null=False, verbose_name='Фамилия')
     patronymic = models.CharField(max_length=50, null=False, verbose_name='Отчество')
@@ -264,6 +315,10 @@ class Employee(models.Model):
 
 
 class Service(models.Model):
+    """
+    Модель типовой задачи (задачи, которая может быть назначена диспетчером мастеру)
+    """
+
     name = models.CharField(max_length=100, null=False, verbose_name='Типовая задача')
     description = models.TextField(null=False, verbose_name='Описание задачи')
     position = models.ForeignKey(Position, on_delete=models.CASCADE, null=False,
@@ -282,6 +337,10 @@ def get_request_photo_path(instance, filename=None):
 
 
 class Request(models.Model):
+    """
+    Модель обращения в АДС УК
+    """
+
     created_at = models.DateTimeField(null=False, verbose_name='Дата и время создания', auto_now_add=True)
     text = models.TextField(null=False, verbose_name='Текст обращения')
     status = models.ForeignKey(ExecutionStatus, on_delete=models.CASCADE, null=False, verbose_name='Статус выполнения')
@@ -289,9 +348,6 @@ class Request(models.Model):
     address = models.ForeignKey(House, on_delete=models.CASCADE, null=False, verbose_name='Адрес заявки')
     apartment = models.IntegerField(null=True, blank=True, verbose_name='Номер квартиры')
     photo = models.ImageField(upload_to=get_request_photo_path, null=True, blank=True, verbose_name='Фото обращения')
-    # employee = models.ForeignKey(Employee, on_delete=models.CASCADE, null=True, blank=True,
-    # verbose_name='Исполнитель') service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True,
-    # blank=True, verbose_name='Задача')
 
     def __str__(self):
         local_time = timezone.localtime(self.created_at, timezone.get_current_timezone())
@@ -303,13 +359,14 @@ class Request(models.Model):
 
 
 class RequestTask(models.Model):
+    """
+    Модель задачи, назначенной мастеру
+    """
+
     request = models.ForeignKey(Request, on_delete=models.CASCADE, null=False, verbose_name='Заявка')
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, null=False, verbose_name='Исполнитель')
     service = models.ForeignKey(Service, on_delete=models.CASCADE, null=False, verbose_name='Задача')
     status = models.ForeignKey(ExecutionStatus, on_delete=models.CASCADE, null=False, verbose_name='Статус выполнения')
-
-    # def __str__(self):
-    #     return
 
     class Meta:
         verbose_name = 'Задача'
@@ -317,18 +374,13 @@ class RequestTask(models.Model):
 
 
 class BotsSettings(models.Model):
+    """
+    Модель хранения настроек ботов
+    """
+
     residentBotToken = models.TextField(null=False, verbose_name='Токен бота жителей')
     staffBotToken = models.TextField(null=False, verbose_name='Токен бота мастеров')
 
     class Meta:
         verbose_name = 'Токены ботов'
         verbose_name_plural = 'Токены ботов'
-
-
-class TemporaryToken(models.Model):
-    token = models.CharField(max_length=100, unique=True)
-    created_to = models.BigIntegerField(unique=True, null=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def is_valid(self):
-        return timezone.now() - self.created_at < timedelta(minutes=15)  # Токен действителен 15 минут
