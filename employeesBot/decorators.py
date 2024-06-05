@@ -5,12 +5,12 @@ import os
 
 LOGIN_USERNAME = str(os.environ.get(
     "EMPL_LOGIN_USERNAME",
-    default='piter'
+    default='staffBot'
 ))
 
 LOGIN_PASSWORD = str(os.environ.get(
     "EMPL_LOGIN_PASSWORD",
-    default='pass1234forpiter'
+    default='0ab6db854'
 ))
 
 

@@ -1761,13 +1761,13 @@ class TasksForMasterView(generics.ListAPIView):
 
 class UserListView(generics.ListAPIView):
     """Список всех пользователей"""
-    queryset = User.objects.filter(~Q(pk=1))
+    queryset = User.objects.filter(~(Q(pk=1) | Q(pk=2) | Q(pk=3)))
     serializer_class = UserLstMngCrtDelSerializer
     permission_classes = (IsSuperuser,)
 
     @extend_schema(
         summary="Список всех пользователей",
-        description="Получение списка всех пользователей, кроме пользователя c pk=1.",
+        description="Получение списка всех пользователей, кроме пользователя c pk=1, 2, 3.",
         responses={
             status.HTTP_200_OK: serializer_class(many=True),
             status.HTTP_400_BAD_REQUEST: inline_serializer(
