@@ -17,5 +17,4 @@ components.forEach(component => {
 app
     .use(router)
     .use(store)
-    // .use(cors())
     .mount('#app')
