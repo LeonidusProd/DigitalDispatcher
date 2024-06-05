@@ -1,0 +1,2263 @@
+[
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Адрес",
+    "content_type": 7,
+    "codename": "add_building"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Адрес",
+    "content_type": 7,
+    "codename": "change_building"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Адрес",
+    "content_type": 7,
+    "codename": "delete_building"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Адрес",
+    "content_type": 7,
+    "codename": "view_building"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Город",
+    "content_type": 8,
+    "codename": "add_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Город",
+    "content_type": 8,
+    "codename": "change_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Город",
+    "content_type": 8,
+    "codename": "delete_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Город",
+    "content_type": 8,
+    "codename": "view_city"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add department",
+    "content_type": 9,
+    "codename": "add_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change department",
+    "content_type": 9,
+    "codename": "change_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete department",
+    "content_type": 9,
+    "codename": "delete_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view department",
+    "content_type": 9,
+    "codename": "view_department"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add employee",
+    "content_type": 10,
+    "codename": "add_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change employee",
+    "content_type": 10,
+    "codename": "change_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete employee",
+    "content_type": 10,
+    "codename": "delete_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view employee",
+    "content_type": 10,
+    "codename": "view_employee"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add execution status",
+    "content_type": 11,
+    "codename": "add_executionstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change execution status",
+    "content_type": 11,
+    "codename": "change_executionstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete execution status",
+    "content_type": 11,
+    "codename": "delete_executionstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view execution status",
+    "content_type": 11,
+    "codename": "view_executionstatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add house",
+    "content_type": 12,
+    "codename": "add_house"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change house",
+    "content_type": 12,
+    "codename": "change_house"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete house",
+    "content_type": 12,
+    "codename": "delete_house"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view house",
+    "content_type": 12,
+    "codename": "view_house"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add position",
+    "content_type": 13,
+    "codename": "add_position"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change position",
+    "content_type": 13,
+    "codename": "change_position"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete position",
+    "content_type": 13,
+    "codename": "delete_position"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view position",
+    "content_type": 13,
+    "codename": "view_position"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add resident",
+    "content_type": 14,
+    "codename": "add_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change resident",
+    "content_type": 14,
+    "codename": "change_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete resident",
+    "content_type": 14,
+    "codename": "delete_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view resident",
+    "content_type": 14,
+    "codename": "view_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add work schedule",
+    "content_type": 15,
+    "codename": "add_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change work schedule",
+    "content_type": 15,
+    "codename": "change_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete work schedule",
+    "content_type": 15,
+    "codename": "delete_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view work schedule",
+    "content_type": 15,
+    "codename": "view_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add work day",
+    "content_type": 16,
+    "codename": "add_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change work day",
+    "content_type": 16,
+    "codename": "change_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete work day",
+    "content_type": 16,
+    "codename": "delete_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view work day",
+    "content_type": 16,
+    "codename": "view_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add Улица",
+    "content_type": 17,
+    "codename": "add_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change Улица",
+    "content_type": 17,
+    "codename": "change_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete Улица",
+    "content_type": 17,
+    "codename": "delete_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view Улица",
+    "content_type": 17,
+    "codename": "view_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add service",
+    "content_type": 18,
+    "codename": "add_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change service",
+    "content_type": 18,
+    "codename": "change_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete service",
+    "content_type": 18,
+    "codename": "delete_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view service",
+    "content_type": 18,
+    "codename": "view_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add request",
+    "content_type": 19,
+    "codename": "add_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change request",
+    "content_type": 19,
+    "codename": "change_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete request",
+    "content_type": 19,
+    "codename": "delete_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view request",
+    "content_type": 19,
+    "codename": "view_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add office",
+    "content_type": 20,
+    "codename": "add_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change office",
+    "content_type": 20,
+    "codename": "change_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete office",
+    "content_type": 20,
+    "codename": "delete_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view office",
+    "content_type": 20,
+    "codename": "view_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 81,
+  "fields": {
+    "name": "Can add housing complex",
+    "content_type": 21,
+    "codename": "add_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 82,
+  "fields": {
+    "name": "Can change housing complex",
+    "content_type": 21,
+    "codename": "change_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 83,
+  "fields": {
+    "name": "Can delete housing complex",
+    "content_type": 21,
+    "codename": "delete_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 84,
+  "fields": {
+    "name": "Can view housing complex",
+    "content_type": 21,
+    "codename": "view_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 85,
+  "fields": {
+    "name": "Can add Жилой комплекс",
+    "content_type": 22,
+    "codename": "add_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 86,
+  "fields": {
+    "name": "Can change Жилой комплекс",
+    "content_type": 22,
+    "codename": "change_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 87,
+  "fields": {
+    "name": "Can delete Жилой комплекс",
+    "content_type": 22,
+    "codename": "delete_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 88,
+  "fields": {
+    "name": "Can view Жилой комплекс",
+    "content_type": 22,
+    "codename": "view_housingcomplex"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 89,
+  "fields": {
+    "name": "Can add Заявка/Обращение",
+    "content_type": 14,
+    "codename": "add_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 90,
+  "fields": {
+    "name": "Can change Заявка/Обращение",
+    "content_type": 14,
+    "codename": "change_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 91,
+  "fields": {
+    "name": "Can delete Заявка/Обращение",
+    "content_type": 14,
+    "codename": "delete_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 92,
+  "fields": {
+    "name": "Can view Заявка/Обращение",
+    "content_type": 14,
+    "codename": "view_request"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 93,
+  "fields": {
+    "name": "Can add Житель",
+    "content_type": 15,
+    "codename": "add_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 94,
+  "fields": {
+    "name": "Can change Житель",
+    "content_type": 15,
+    "codename": "change_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 95,
+  "fields": {
+    "name": "Can delete Житель",
+    "content_type": 15,
+    "codename": "delete_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 96,
+  "fields": {
+    "name": "Can view Житель",
+    "content_type": 15,
+    "codename": "view_resident"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 97,
+  "fields": {
+    "name": "Can add График работы",
+    "content_type": 16,
+    "codename": "add_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 98,
+  "fields": {
+    "name": "Can change График работы",
+    "content_type": 16,
+    "codename": "change_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 99,
+  "fields": {
+    "name": "Can delete График работы",
+    "content_type": 16,
+    "codename": "delete_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 100,
+  "fields": {
+    "name": "Can view График работы",
+    "content_type": 16,
+    "codename": "view_workschedule"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 101,
+  "fields": {
+    "name": "Can add Рабочий день",
+    "content_type": 17,
+    "codename": "add_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 102,
+  "fields": {
+    "name": "Can change Рабочий день",
+    "content_type": 17,
+    "codename": "change_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 103,
+  "fields": {
+    "name": "Can delete Рабочий день",
+    "content_type": 17,
+    "codename": "delete_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 104,
+  "fields": {
+    "name": "Can view Рабочий день",
+    "content_type": 17,
+    "codename": "view_workday"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 105,
+  "fields": {
+    "name": "Can add Улица",
+    "content_type": 18,
+    "codename": "add_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 106,
+  "fields": {
+    "name": "Can change Улица",
+    "content_type": 18,
+    "codename": "change_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 107,
+  "fields": {
+    "name": "Can delete Улица",
+    "content_type": 18,
+    "codename": "delete_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 108,
+  "fields": {
+    "name": "Can view Улица",
+    "content_type": 18,
+    "codename": "view_street"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 109,
+  "fields": {
+    "name": "Can add Типовая задача",
+    "content_type": 19,
+    "codename": "add_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 110,
+  "fields": {
+    "name": "Can change Типовая задача",
+    "content_type": 19,
+    "codename": "change_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 111,
+  "fields": {
+    "name": "Can delete Типовая задача",
+    "content_type": 19,
+    "codename": "delete_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 112,
+  "fields": {
+    "name": "Can view Типовая задача",
+    "content_type": 19,
+    "codename": "view_service"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 113,
+  "fields": {
+    "name": "Can add Задача",
+    "content_type": 20,
+    "codename": "add_requesttask"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 114,
+  "fields": {
+    "name": "Can change Задача",
+    "content_type": 20,
+    "codename": "change_requesttask"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 115,
+  "fields": {
+    "name": "Can delete Задача",
+    "content_type": 20,
+    "codename": "delete_requesttask"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 116,
+  "fields": {
+    "name": "Can view Задача",
+    "content_type": 20,
+    "codename": "view_requesttask"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 117,
+  "fields": {
+    "name": "Can add Управляющая компания",
+    "content_type": 21,
+    "codename": "add_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 118,
+  "fields": {
+    "name": "Can change Управляющая компания",
+    "content_type": 21,
+    "codename": "change_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 119,
+  "fields": {
+    "name": "Can delete Управляющая компания",
+    "content_type": 21,
+    "codename": "delete_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 120,
+  "fields": {
+    "name": "Can view Управляющая компания",
+    "content_type": 21,
+    "codename": "view_office"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 121,
+  "fields": {
+    "name": "Can add Токены ботов",
+    "content_type": 23,
+    "codename": "add_botssettings"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 122,
+  "fields": {
+    "name": "Can change Токены ботов",
+    "content_type": 23,
+    "codename": "change_botssettings"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 123,
+  "fields": {
+    "name": "Can delete Токены ботов",
+    "content_type": 23,
+    "codename": "delete_botssettings"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 124,
+  "fields": {
+    "name": "Can view Токены ботов",
+    "content_type": 23,
+    "codename": "view_botssettings"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 125,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 24,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 126,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 24,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 127,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 24,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 128,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 24,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 129,
+  "fields": {
+    "name": "Can add token",
+    "content_type": 25,
+    "codename": "add_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 130,
+  "fields": {
+    "name": "Can change token",
+    "content_type": 25,
+    "codename": "change_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 131,
+  "fields": {
+    "name": "Can delete token",
+    "content_type": 25,
+    "codename": "delete_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 132,
+  "fields": {
+    "name": "Can view token",
+    "content_type": 25,
+    "codename": "view_tokenproxy"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$86GDFdLfWkxSUzEethb1wG$iCgtlIgZjYyIqOmrLg+3LyKZFUovr9WzdF1rg3Dbb00=",
+    "last_login": "2024-05-21T09:31:08.239Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-02-20T16:34:23.473Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$kVWT5THE3tIusvqrVdGEOJ$koCDH0Py6H/T6nv4N3pfyKfqEOgYCFalSek0rCKjOpY=",
+    "last_login": "2024-05-18T21:13:02.955Z",
+    "is_superuser": false,
+    "username": "piter",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-05-10T15:34:27Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 1,
+  "fields": {
+    "name": "Нижний Новгород"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 2,
+  "fields": {
+    "name": "Москва"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 3,
+  "fields": {
+    "name": "scesdfcsf"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 4,
+  "fields": {
+    "name": "eqweqwdasdqw"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 5,
+  "fields": {
+    "name": "efsfsdf"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 6,
+  "fields": {
+    "name": "Город говна"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 7,
+  "fields": {
+    "name": "Залупа"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 8,
+  "fields": {
+    "name": "Pfkegf 2"
+  }
+},
+{
+  "model": "api_v1.city",
+  "pk": 9,
+  "fields": {
+    "name": "Пизда"
+  }
+},
+{
+  "model": "api_v1.street",
+  "pk": 1,
+  "fields": {
+    "city": 1,
+    "name": "Энгельса"
+  }
+},
+{
+  "model": "api_v1.street",
+  "pk": 2,
+  "fields": {
+    "city": 1,
+    "name": "Кораблестроителей"
+  }
+},
+{
+  "model": "api_v1.street",
+  "pk": 3,
+  "fields": {
+    "city": 5,
+    "name": "жопа"
+  }
+},
+{
+  "model": "api_v1.street",
+  "pk": 4,
+  "fields": {
+    "city": 7,
+    "name": "Головка"
+  }
+},
+{
+  "model": "api_v1.street",
+  "pk": 5,
+  "fields": {
+    "city": 9,
+    "name": "Rkbnjh"
+  }
+},
+{
+  "model": "api_v1.building",
+  "pk": 1,
+  "fields": {
+    "street": 1,
+    "number": 29,
+    "corpus": null
+  }
+},
+{
+  "model": "api_v1.building",
+  "pk": 2,
+  "fields": {
+    "street": 1,
+    "number": 28,
+    "corpus": null
+  }
+},
+{
+  "model": "api_v1.building",
+  "pk": 3,
+  "fields": {
+    "street": 1,
+    "number": 30,
+    "corpus": null
+  }
+},
+{
+  "model": "api_v1.building",
+  "pk": 4,
+  "fields": {
+    "street": 1,
+    "number": 30,
+    "corpus": "А"
+  }
+},
+{
+  "model": "api_v1.building",
+  "pk": 5,
+  "fields": {
+    "street": 2,
+    "number": 17,
+    "corpus": null
+  }
+},
+{
+  "model": "api_v1.workschedule",
+  "pk": 1,
+  "fields": {
+    "name": "Обычный"
+  }
+},
+{
+  "model": "api_v1.workschedule",
+  "pk": 2,
+  "fields": {
+    "name": "Без выходных"
+  }
+},
+{
+  "model": "api_v1.workschedule",
+  "pk": 23,
+  "fields": {
+    "name": "Тестовый только чётные"
+  }
+},
+{
+  "model": "api_v1.workschedule",
+  "pk": 24,
+  "fields": {
+    "name": "Тестовый только нечётные"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 1,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 1,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 2,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 2,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 3,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 3,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 4,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 4,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 5,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 5,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 6,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 6,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 7,
+  "fields": {
+    "schedule": 1,
+    "day_of_week": 7,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 8,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 1,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 9,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 2,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 10,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 3,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 11,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 4,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 12,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 5,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 13,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 6,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 14,
+  "fields": {
+    "schedule": 2,
+    "day_of_week": 7,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 155,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 1,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 156,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 2,
+    "is_not_working": false,
+    "start_time": "12:00:00",
+    "end_time": "13:00:00"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 157,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 3,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 158,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 4,
+    "is_not_working": false,
+    "start_time": "12:00:00",
+    "end_time": "13:00:00"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 159,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 5,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 160,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 6,
+    "is_not_working": false,
+    "start_time": "12:00:00",
+    "end_time": "13:00:00"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 161,
+  "fields": {
+    "schedule": 23,
+    "day_of_week": 7,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 162,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 1,
+    "is_not_working": false,
+    "start_time": "12:00:00",
+    "end_time": "13:02:00"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 163,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 2,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 164,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 3,
+    "is_not_working": false,
+    "start_time": "12:02:00",
+    "end_time": "13:02:00"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 165,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 4,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 166,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 5,
+    "is_not_working": false,
+    "start_time": "12:02:00",
+    "end_time": "13:02:00"
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 167,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 6,
+    "is_not_working": true,
+    "start_time": null,
+    "end_time": null
+  }
+},
+{
+  "model": "api_v1.workday",
+  "pk": 168,
+  "fields": {
+    "schedule": 24,
+    "day_of_week": 7,
+    "is_not_working": false,
+    "start_time": "12:02:00",
+    "end_time": "13:03:00"
+  }
+},
+{
+  "model": "api_v1.office",
+  "pk": 1,
+  "fields": {
+    "name": "Бастион",
+    "address": 1,
+    "work_schedule": 1
+  }
+},
+{
+  "model": "api_v1.office",
+  "pk": 2,
+  "fields": {
+    "name": "Корабли",
+    "address": 5,
+    "work_schedule": 1
+  }
+},
+{
+  "model": "api_v1.housingcomplex",
+  "pk": 1,
+  "fields": {
+    "name": "Бастион",
+    "office": 1
+  }
+},
+{
+  "model": "api_v1.housingcomplex",
+  "pk": 2,
+  "fields": {
+    "name": "Корабли",
+    "office": 2
+  }
+},
+{
+  "model": "api_v1.house",
+  "pk": 1,
+  "fields": {
+    "complex": 1,
+    "address": 1
+  }
+},
+{
+  "model": "api_v1.house",
+  "pk": 2,
+  "fields": {
+    "complex": 1,
+    "address": 2
+  }
+},
+{
+  "model": "api_v1.house",
+  "pk": 3,
+  "fields": {
+    "complex": 1,
+    "address": 3
+  }
+},
+{
+  "model": "api_v1.house",
+  "pk": 4,
+  "fields": {
+    "complex": 1,
+    "address": 4
+  }
+},
+{
+  "model": "api_v1.house",
+  "pk": 5,
+  "fields": {
+    "complex": 2,
+    "address": 5
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 1,
+  "fields": {
+    "name": "Леонид",
+    "surname": "Беляков",
+    "patronymic": "Дмитриевич",
+    "phone": "89047996383",
+    "tg_id": 123123123
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 2,
+  "fields": {
+    "name": "Пётр",
+    "surname": "Иванов",
+    "patronymic": null,
+    "phone": "86542659846",
+    "tg_id": 123123
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 3,
+  "fields": {
+    "name": "Ирина",
+    "surname": "Петрова",
+    "patronymic": null,
+    "phone": "89264531567",
+    "tg_id": 12312313
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 4,
+  "fields": {
+    "name": "Иван",
+    "surname": "Кузнецов",
+    "patronymic": null,
+    "phone": "86549218465",
+    "tg_id": 65654
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 5,
+  "fields": {
+    "name": "Пётр",
+    "surname": "Булкин",
+    "patronymic": "Попин",
+    "phone": "86549865154",
+    "tg_id": null
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 6,
+  "fields": {
+    "name": "123",
+    "surname": "123",
+    "patronymic": "123",
+    "phone": "123123123",
+    "tg_id": null
+  }
+},
+{
+  "model": "api_v1.resident",
+  "pk": 7,
+  "fields": {
+    "name": "Тоттий",
+    "surname": "Чукча",
+    "patronymic": "Попов",
+    "phone": "85468954226",
+    "tg_id": null
+  }
+},
+{
+  "model": "api_v1.executionstatus",
+  "pk": 1,
+  "fields": {
+    "name": "Новая"
+  }
+},
+{
+  "model": "api_v1.executionstatus",
+  "pk": 2,
+  "fields": {
+    "name": "В работе"
+  }
+},
+{
+  "model": "api_v1.executionstatus",
+  "pk": 3,
+  "fields": {
+    "name": "На проверке"
+  }
+},
+{
+  "model": "api_v1.executionstatus",
+  "pk": 4,
+  "fields": {
+    "name": "Завершена"
+  }
+},
+{
+  "model": "api_v1.department",
+  "pk": 1,
+  "fields": {
+    "name": "Тестовый отдел 1"
+  }
+},
+{
+  "model": "api_v1.department",
+  "pk": 2,
+  "fields": {
+    "name": "Тестовый отдел 2"
+  }
+},
+{
+  "model": "api_v1.department",
+  "pk": 3,
+  "fields": {
+    "name": "Тестовый отдел 3"
+  }
+},
+{
+  "model": "api_v1.department",
+  "pk": 4,
+  "fields": {
+    "name": "Тестовый отдел 4"
+  }
+},
+{
+  "model": "api_v1.department",
+  "pk": 5,
+  "fields": {
+    "name": "Тестовый отдел 5"
+  }
+},
+{
+  "model": "api_v1.department",
+  "pk": 6,
+  "fields": {
+    "name": "Тестовый отдел 6"
+  }
+},
+{
+  "model": "api_v1.position",
+  "pk": 1,
+  "fields": {
+    "name": "Тестовая должность 1",
+    "department": 1
+  }
+},
+{
+  "model": "api_v1.position",
+  "pk": 2,
+  "fields": {
+    "name": "Тестовая должность 2",
+    "department": 2
+  }
+},
+{
+  "model": "api_v1.position",
+  "pk": 3,
+  "fields": {
+    "name": "Тестовая должность 3",
+    "department": 3
+  }
+},
+{
+  "model": "api_v1.position",
+  "pk": 4,
+  "fields": {
+    "name": "Тестовая должность 4",
+    "department": 4
+  }
+},
+{
+  "model": "api_v1.position",
+  "pk": 5,
+  "fields": {
+    "name": "Тестовая должность 5",
+    "department": 5
+  }
+},
+{
+  "model": "api_v1.position",
+  "pk": 6,
+  "fields": {
+    "name": "Тестовая должность 6",
+    "department": 6
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 1,
+  "fields": {
+    "name": "1",
+    "surname": "Сотрудник",
+    "patronymic": "Тестовый",
+    "phone": "84548798842",
+    "email": null,
+    "office": 1,
+    "position": 1,
+    "tg_id": 45687516
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 2,
+  "fields": {
+    "name": "2",
+    "surname": "Сотрудник",
+    "patronymic": "Тестовый",
+    "phone": "85641235487",
+    "email": null,
+    "office": 1,
+    "position": 2,
+    "tg_id": 645987
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 3,
+  "fields": {
+    "name": "3",
+    "surname": "Сотрудник",
+    "patronymic": "Тестовый",
+    "phone": "86549856548",
+    "email": null,
+    "office": 1,
+    "position": 3,
+    "tg_id": 45649854
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 4,
+  "fields": {
+    "name": "4",
+    "surname": "Сотрудник",
+    "patronymic": "Тестовый",
+    "phone": "86542197845",
+    "email": null,
+    "office": 1,
+    "position": 4,
+    "tg_id": 5478514
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 5,
+  "fields": {
+    "name": "5",
+    "surname": "Сотрудник",
+    "patronymic": "Тестовый",
+    "phone": "86486519578",
+    "email": null,
+    "office": 1,
+    "position": 5,
+    "tg_id": 897645
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 6,
+  "fields": {
+    "name": "6",
+    "surname": "Сотрудник",
+    "patronymic": "Тестовый",
+    "phone": "86485455486",
+    "email": null,
+    "office": 1,
+    "position": 6,
+    "tg_id": 7845
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 7,
+  "fields": {
+    "name": "Тестовый",
+    "surname": "Сотрудник",
+    "patronymic": "Для задач",
+    "phone": "86565644895",
+    "email": null,
+    "office": 2,
+    "position": 1,
+    "tg_id": 852
+  }
+},
+{
+  "model": "api_v1.employee",
+  "pk": 8,
+  "fields": {
+    "name": "Леонид",
+    "surname": "Беляков",
+    "patronymic": "Дмитриевич",
+    "phone": "89047996383",
+    "email": "leonidusreg@gmail.com",
+    "office": 2,
+    "position": 3,
+    "tg_id": 123456
+  }
+},
+{
+  "model": "api_v1.service",
+  "pk": 1,
+  "fields": {
+    "name": "Тестовая задача 1",
+    "description": "Описание тестовой задачи 1",
+    "position": 1
+  }
+},
+{
+  "model": "api_v1.service",
+  "pk": 2,
+  "fields": {
+    "name": "Тестовая задача 2",
+    "description": "Описание тестовой задачи 2",
+    "position": 2
+  }
+},
+{
+  "model": "api_v1.service",
+  "pk": 3,
+  "fields": {
+    "name": "Тестовая задача 3",
+    "description": "Описание тестовой задачи 3",
+    "position": 3
+  }
+},
+{
+  "model": "api_v1.service",
+  "pk": 19,
+  "fields": {
+    "name": "123123123",
+    "description": "123123123",
+    "position": 1
+  }
+},
+{
+  "model": "api_v1.request",
+  "pk": 1,
+  "fields": {
+    "created_at": "2024-05-04T11:49:25.407Z",
+    "text": "Тестовая новая заявка №1",
+    "status": 1,
+    "resident": 1,
+    "address": 1,
+    "apartment": 36,
+    "photo": ""
+  }
+},
+{
+  "model": "api_v1.request",
+  "pk": 2,
+  "fields": {
+    "created_at": "2024-05-04T12:12:45.102Z",
+    "text": "Тестовая новая заявка №2",
+    "status": 1,
+    "resident": 2,
+    "address": 2,
+    "apartment": 20,
+    "photo": "request/123123/Снимок_экрана_2024-04-26_215442.png"
+  }
+},
+{
+  "model": "api_v1.request",
+  "pk": 3,
+  "fields": {
+    "created_at": "2024-05-04T12:14:19.371Z",
+    "text": "Тестовая заявка в работе",
+    "status": 2,
+    "resident": 3,
+    "address": 3,
+    "apartment": null,
+    "photo": ""
+  }
+},
+{
+  "model": "api_v1.request",
+  "pk": 4,
+  "fields": {
+    "created_at": "2024-05-04T12:15:41.821Z",
+    "text": "Тестовая заявка на проверке № 4",
+    "status": 3,
+    "resident": 4,
+    "address": 4,
+    "apartment": null,
+    "photo": ""
+  }
+},
+{
+  "model": "api_v1.request",
+  "pk": 5,
+  "fields": {
+    "created_at": "2024-05-05T16:10:28.145Z",
+    "text": "Тестовая заявка другого ЖК",
+    "status": 1,
+    "resident": 1,
+    "address": 5,
+    "apartment": null,
+    "photo": ""
+  }
+},
+{
+  "model": "api_v1.request",
+  "pk": 9,
+  "fields": {
+    "created_at": "2024-05-13T12:53:21.685Z",
+    "text": "Причина обращения - на хую вращение",
+    "status": 4,
+    "resident": 7,
+    "address": 5,
+    "apartment": 13,
+    "photo": ""
+  }
+},
+{
+  "model": "api_v1.requesttask",
+  "pk": 2,
+  "fields": {
+    "request": 2,
+    "employee": 2,
+    "service": 2,
+    "status": 1
+  }
+},
+{
+  "model": "api_v1.requesttask",
+  "pk": 3,
+  "fields": {
+    "request": 3,
+    "employee": 3,
+    "service": 3,
+    "status": 1
+  }
+},
+{
+  "model": "api_v1.requesttask",
+  "pk": 26,
+  "fields": {
+    "request": 5,
+    "employee": 7,
+    "service": 1,
+    "status": 1
+  }
+},
+{
+  "model": "api_v1.requesttask",
+  "pk": 51,
+  "fields": {
+    "request": 1,
+    "employee": 1,
+    "service": 1,
+    "status": 1
+  }
+},
+{
+  "model": "api_v1.requesttask",
+  "pk": 52,
+  "fields": {
+    "request": 1,
+    "employee": 3,
+    "service": 3,
+    "status": 1
+  }
+},
+{
+  "model": "api_v1.botssettings",
+  "pk": 1,
+  "fields": {
+    "residentBotToken": "Хуйаыуааыу1234bghbjymb hgbn5",
+    "staffBotToken": "яаы уяысыуаваыыу"
+  }
+}
+]
