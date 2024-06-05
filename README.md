@@ -172,7 +172,7 @@ python manage.py makemigrations api_v1
 ### 2. Создать дамп базы данных (если изменялось наполнение бд):
 
 ```sh
-python -Xutf8 manage.py dumpdata --indent=2 --exclude sessions --exclude contenttypes --exclude admin.logentry -o digdispdata.json
+python -Xutf8 manage.py dumpdata --indent=2 --exclude sessions --exclude contenttypes --exclude admin.logentry --exclude auth.permission -o digdispdata.json
 ```
 
 ### 3. Создать и запушить коммит. Commit Message заполнить согласно правил:
