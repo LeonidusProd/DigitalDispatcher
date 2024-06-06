@@ -12,7 +12,7 @@ DEBUG = bool(int(os.environ.get("DEBUG", default=1)))
 
 ALLOWED_HOSTS = str(os.environ.get(
     "DJANGO_ALLOWED_HOSTS",
-    default='localhost 127.0.0.1'
+    default='localhost 127.0.0.1 backend'
 )).split(" ")
 
 CSRF_TRUSTED_ORIGINS = str(os.environ.get(

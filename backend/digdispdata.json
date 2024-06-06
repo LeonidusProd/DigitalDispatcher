@@ -796,8 +796,8 @@
   "model": "api_v1.botssettings",
   "pk": 1,
   "fields": {
-    "residentBotToken": "6200922540:AAHYgNdtkiWKAk1pqcHm2oIC8vuCz7hm8Fo",
-    "staffBotToken": "6200922540:AAHYgNdtkiWKAk1pqcHm2oIC8vuCz7hm8Fo"
+    "residentBotToken": "0",
+    "staffBotToken": "0"
   }
 }
 ]

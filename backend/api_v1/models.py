@@ -80,11 +80,11 @@ class Building(models.Model):
         verbose_name_plural = 'Адреса'
 
 
-@receiver(pre_save, sender=Building)
-def check_unique_building(sender, instance, **kwargs):
-    # Проверка уникальности комбинации номера и корпуса для каждой улицы перед сохранением объекта Building
-    if Building.objects.filter(street=instance.street, number=instance.number, corpus=instance.corpus).exists():
-        raise ValidationError("Здание с таким номером и корпусом уже существует на этой улице.")
+# @receiver(pre_save, sender=Building)
+# def check_unique_building(sender, instance, **kwargs):
+#     # Проверка уникальности комбинации номера и корпуса для каждой улицы перед сохранением объекта Building
+#     if Building.objects.filter(street=instance.street, number=instance.number, corpus=instance.corpus).exists():
+#         raise ValidationError("Здание с таким номером и корпусом уже существует на этой улице.")
 
 
 class WorkSchedule(models.Model):

@@ -23,12 +23,12 @@ async def request_first_step(state):
         entered_apartment = user_data['apartment_number']
 
     if selected_address:
-        address_select_btn_text = f'Адрес: {selected_address}. Изменить.'
+        address_select_btn_text = f"Адрес: {selected_address}. Изменить."
     else:
         address_select_btn_text = 'Выбрать адрес'
 
     if entered_apartment:
-        entered_apartment_btn_text = f'Квартира: {entered_apartment}. Изменить.'
+        entered_apartment_btn_text = f"Квартира: {entered_apartment}. Изменить."
     else:
         entered_apartment_btn_text = 'Указать квартиру'
 
@@ -46,7 +46,7 @@ async def complexes_list():
 
     for complex_el in all_complexes:
         keyboard.row(
-            InlineKeyboardButton(text=complex_el['name'], callback_data=f'complex_selected_{complex_el['pk']}')
+            InlineKeyboardButton(text=complex_el['name'], callback_data=f"complex_selected_{complex_el['pk']}")
         )
     return keyboard.as_markup()
 
@@ -58,12 +58,12 @@ async def houses_list(complex_id):
     for house_el in all_houses:
         max_l = 30
         short_name = shorten_name(house_el['name'], max_length=max_l)
-        callback_data = f'house_selected_{house_el['pk']}_{short_name}'
+        callback_data = f"house_selected_{house_el['pk']}_{short_name}"
 
         while len(callback_data.encode('utf-8')) > 64:
             max_l -= 1
             short_name = shorten_name(house_el['name'], max_length=max_l)
-            callback_data = f'house_selected_{house_el['pk']}_{short_name}'
+            callback_data = f"house_selected_{house_el['pk']}_{short_name}"
 
         keyboard.row(
             InlineKeyboardButton(text=house_el['name'],
@@ -79,16 +79,16 @@ async def request_third_step(state):
 
     if 'resident_name' in user_data:
         if 'resident_patronymic' in user_data and user_data['resident_patronymic'] is not '-':
-            patronymic = f' {user_data['resident_patronymic']}'
+            patronymic = f" {user_data['resident_patronymic']}"
         else:
             patronymic = ''
 
-        entered_snp = f'{user_data['resident_surname']} {user_data['resident_name']}{patronymic}'
+        entered_snp = f"{user_data['resident_surname']} {user_data['resident_name']}{patronymic}"
     if 'phone_number' in user_data:
         entered_phone = user_data['phone_number']
 
     if entered_snp:
-        entered_snp_btn_text = f'ФИО: {entered_snp}. Изменить.'
+        entered_snp_btn_text = f"ФИО: {entered_snp}. Изменить."
     else:
         entered_snp_btn_text = 'Ввести ФИО'
 

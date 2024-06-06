@@ -1,7 +1,8 @@
 services:
   backend:
     build:
-      context: .
+      context: backend
+      dockerfile: Dockerfile
     container_name: dd_backend
     hostname: dd_backend
     env_file:
@@ -12,6 +13,7 @@ services:
     ports:
       - "${BACKEND_HOST_PORT}:${BACKEND_CONTAINER_PORT}"
     command: sh -c "python manage.py collectstatic --no-input &&
+      python manage.py makemigrations &&
       python manage.py migrate &&
       python manage.py loaddata digdispdata.json  &&
       gunicorn backend_config.wsgi --bind ${BACKEND_WSGI_IP}:${BACKEND_CONTAINER_PORT}"
@@ -43,7 +45,10 @@ services:
       - backend
 
   postgres:
-    image: "postgres"
+    build:
+      context: ./postgres/
+      dockerfile: ./Dockerfile
+    image: dd_postgres
     restart: always
     container_name: dd_postgres
     environment:
@@ -64,24 +69,44 @@ services:
   frontend:
     restart: always
     build:
-      context: ./front/
-      dockerfile: ./Dockerfile
+      context: front
+      dockerfile: Dockerfile
     image: dd_frontend
     container_name: dd_frontend
     volumes:
       - dd_front_dist:/app/dist
-#    expose:
-#      - "${FRONTEND_HOST_PORT}:${FRONTEND_CONTAINER_PORT}"
-#    env_file:
-#      - .env
     depends_on:
       - backend
     networks:
       - net
-#    command: >
-#      sh -c "
-#      npm run serve
-#      "
+
+  staffbot:
+    restart: always
+    build:
+      context: employeesBot
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    image: dd_staffbot
+    depends_on:
+      - backend
+    networks:
+      - net
+    command: sh -c "python run.py"
+
+  residentbot:
+    restart: always
+    build:
+      context: residentsBot
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    image: dd_residentbot
+    depends_on:
+      - backend
+    networks:
+      - net
+    command: sh -c "python run.py"
 
 networks:
   net:
