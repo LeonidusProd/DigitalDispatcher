@@ -291,17 +291,17 @@ class Employee(models.Model):
     position = models.ForeignKey(Position, on_delete=models.CASCADE, null=False, verbose_name='Должность')
     tg_id = models.BigIntegerField(unique=True, null=True, blank=True, verbose_name='ID пользователя в Telegram')
 
-    def __str__(self):
-        if self.office:
-            return f'УК {self.office.name}: {self.surname} {self.name} {self.patronymic}'
-        else:
-            return f'{self.surname} {self.name} {self.patronymic}'
-
     def get_full_SNP(self):
         if self.patronymic:
             return f'{self.surname} {self.name} {self.patronymic}'
         else:
             return f'{self.surname} {self.name}'
+
+    def __str__(self):
+        if self.office:
+            return f'УК {self.office.name}: {self.surname} {self.name} {self.patronymic}'
+        else:
+            return f'{self.surname} {self.name} {self.patronymic}'
 
     def get_respectful_treatment(self):
         if self.patronymic:
